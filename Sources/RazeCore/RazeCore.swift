@@ -7,7 +7,7 @@ public class RazeCore {
     ///   - hexString: A 6-digit hexidecimal string
     ///   - alpha: A number between 0 - 1.0 indicating how transparent the color is
     /// - Returns: A UIColor defined by the `HexString`parameter
-    class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
+    internal class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
       let r, g, b: CGFloat
       let offset = hexString.hasPrefix("#") ? 1 : 0
       let start = hexString.index(hexString.startIndex, offsetBy: offset)
@@ -22,4 +22,12 @@ public class RazeCore {
       }
       return UIColor(red: 0, green: 0, blue: 0, alpha: alpha)
     }
+    
+    
+    /// The most eye-pleasing color to all of humanity.
+    public static var razeColor: UIColor {
+        return self.colorFromHexString("006736")
+    }
 }
+
+
